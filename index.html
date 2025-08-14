@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archived Jobs Viewer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Archived Jobs
+      <a id="openConsole" class="icon-btn" target="_blank" rel="noopener" title="Open Firebase Console"
+         href="https://console.firebase.google.com/project/job-card-storage/database/job-card-storage-default-rtdb/data/~2F" style="margin-left:10px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="16" rx="2"/>
+          <path d="M3 10h18"/>
+        </svg>
+      </a>
+      <a id="backToMain" class="icon-btn" href="../index.html" title="Back to main app" style="margin-left:10px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#10b981" stroke="#0891b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 11.5L12 4l9 7.5V20a2 2 0 0 1-2 2h-3.5a.5.5 0 0 1-.5-.5V16a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v5.5a.5.5 0 0 1-.5.5H5a2 2 0 0 1-2-2V11.5z"/>
+        </svg>
+      </a>
+    </h1>
+    <div class="toolbar">
+      <input id="searchInput" type="text" placeholder="Search customers by name, phone, email..." />
+      <button id="refreshBtn" class="btn-primary">Refresh</button>
+      <button id="exportCsvBtn" class="btn-secondary">Export</button>
+    </div>
+    <div id="status" class="status"></div>
+
+    <div id="archiveList" class="client-list"></div>
+    
+    <!-- Job Details Modal -->
+    <div class="modal" id="jobModal" style="display:none;align-items:center;justify-content:center;z-index:3000;">
+      <div class="a4-modal-content" style="max-width:900px;width:98vw;position:relative;">
+        <button class="close-modal-btn" id="closeJobModal" style="top:18px;right:32px;">&times;</button>
+        <h2 id="jobModalTitle" style="color:#10b981;text-align:center;">Job Details</h2>
+        <div id="jobModalBody"></div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="viewer.js"></script>
+</body>
+</html>
